@@ -1,0 +1,187 @@
+@CHARSET "ISO-8859-1";
+
+#container {
+	width: 90%;
+	margin: 10px auto;
+	background-color: #fff;
+	color: #333;
+	border: 1px solid gray;
+	line-height: 130%;
+}
+
+#top {
+	padding: .5em;
+	background-color: #ddd;
+	border-bottom: 1px solid gray;
+}
+
+#top h1 {
+	padding: 0;
+	margin: 0;
+}
+
+#leftnav {
+	float: left;
+	width: 160px;
+	margin: 0;
+	padding: 1em;
+}
+
+#rightnav {
+	float: right;
+	width: 160px;
+	margin: 0;
+	padding: 1em;
+}
+
+#content {
+	margin-left: 200px;
+	border-left: 1px solid gray;
+	margin-right: 200px;
+	border-right: 1px solid gray;
+	padding: 1em;
+	max-width: 36em;
+}
+
+#footer {
+	clear: both;
+	margin: 0;
+	padding: .5em;
+	color: #333;
+	background-color: #ddd;
+	border-top: 1px solid gray;
+}
+
+#leftnav p,#rightnav p {
+	margin: 0 0 1em 0;
+}
+
+#content h2 {
+	margin: 0 0 .5em 0;
+}
+
+* {
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+body {
+	background: url('grey.png');
+	font-family: "Maven Pro", serif;
+}
+
+a {
+	text-decoration: none;
+	display: inline-block;
+	padding: 4px;
+	outline: 0;
+	color: #3a599d;
+	-webkit-transition-duration: 0.25s;
+	-moz-transition-duration: 0.25s;
+	-o-transition-duration: 0.25s;
+	transition-duration: 0.25s;
+	-webkit-transition-property: -webkit-transform;
+	-moz-transition-property: -moz-transform;
+	-o-transition-property: -o-transform;
+	transition-property: transform;
+	-webkit-transform: scale(1) rotate(0);
+	-moz-transform: scale(1) rotate(0);
+	-o-transform: scale(1) rotate(0);
+	transform: scale(1) rotate(0);
+}
+
+a:hover {
+	background: url('use_your_illusion.png');
+	text-decoration: none;
+	color: #fff;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-transform: scale(1.05) rotate(-1deg);
+	-moz-transform: scale(1.05) rotate(-1deg);
+	-o-transform: scale(1.05) rotate(-1deg);
+	transform: scale(1.05) rotate(-1deg);
+}
+
+a:nth-child(2n):hover {
+	-webkit-transform: scale(1.05) rotate(1deg);
+	-moz-transform: scale(1.05) rotate(1deg);
+	-o-transform: scale(1.05) rotate(1deg);
+	transform: scale(1.05) rotate(1deg);
+}
+
+#container {
+	margin: 0px auto;
+	width: 960px;
+	text-align: center;
+}
+
+#header {
+	font-size: 42px;
+	font-family: "Sorts Mill Goudy", Serif;
+	padding-bottom: 16px;
+	margin-top: 64px;
+}
+
+#header small {
+	display: block;
+	font-size: 16px;
+}
+
+#quote {
+	font-size: 26px;
+	color: #fff;
+	margin-top: 12px;
+	padding: 24px 12px;
+	background: url('use_your_illusion.png');
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: 0px 0px 10px 1px rgba(7, 7, 7, 0.5);
+	box-shadow: 0px 0px 10px 1px rgba(7, 7, 7, 0.5);
+	text-shadow: 0px 0px 1px #000;
+	filter: dropshadow(color =             #000, offx =             0, offy =
+		          
+		 0);
+}
+
+#logo {
+	opacity: 0.7;
+}
+
+#links {
+	margin-top: 16px;
+	text-align: center;
+	font-family: "Sorts Mill Goudy", Serif;
+	font-size: 16px;
+}
+
+#links a {
+	text-decoration: none;
+	font-weight: normal;
+}
+
+#shortcuts-help {
+	font-size: 10px;
+	color: #aaa;
+	font-family: Verdana, sans-serif;
+	text-transform: lowercase;
+	margin-top: 16px;
+}
+
+#footer {
+	margin-top: 64px;
+	border-top: 1px dotted #ccc;
+	padding-top: 8px;
+	font-size: 10px;
+	color: #aaa;
+	font-family: Verdana, sans-serif;
+}
+
+#footer a {
+	color: #777;
+}
+
+#footer a:hover {
+	color: #fff;
+}
