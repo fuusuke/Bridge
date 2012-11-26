@@ -2,12 +2,14 @@ package me.saurav.bridge.js;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.util.Log;
 import android.widget.Toast;
 
 public class JavaScriptInterface {
+	private static final String TAG = JavaScriptInterface.class.getSimpleName();
 	private Context mContext;
 
-	JavaScriptInterface(Context c) {
+	public JavaScriptInterface(Context c) {
 		mContext = c;
 	}
 
@@ -20,6 +22,7 @@ public class JavaScriptInterface {
 	}
 
 	public void showHTML(String html) {
+		Log.d(TAG, html);
 		new AlertDialog.Builder(mContext).setTitle("HTML").setMessage(html)
 				.setPositiveButton(android.R.string.ok, null)
 				.setCancelable(false).create().show();
