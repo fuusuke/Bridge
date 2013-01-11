@@ -1,31 +1,61 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-	
-	<LINK href="www/reset.css" rel="stylesheet" type="text/css">
-	<LINK href="www/style.css" rel="stylesheet" type="text/css">
-	<link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy|Maven+Pro' rel='stylesheet' type='text/css'>
-	
-	<script src="file:///android_asset/www/jquery.js"></script>
-	<script src="file:///android_asset/www/jquery-ui.js"></script>
-	<script src="file:///android_asset/www/my.js"></script> 
-	
+<title>PhoneGap</title>
+<script type="text/javascript" charset="utf-8" src="cordova-1.5.0.js"></script>
+<script type="text/javascript" charset="utf-8" src="jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="jquery-ui.js"></script>
 </head>
 
+<script type="text/javascript">
+	var matchstring = '';
+	document.addEventListener("deviceready", onDeviceReady, false);
+
+	function onDeviceReady() {
+		checkConnection();
+	}
+
+	function checkConnection() {
+		var networkState = navigator.network.connection.type;
+
+		var states = {};
+		states[Connection.UNKNOWN] = 'Unknown connection';
+		states[Connection.ETHERNET] = 'Ethernet connection';
+		states[Connection.WIFI] = 'WiFi connection';
+		states[Connection.CELL_2G] = 'Cell 2G connection';
+		states[Connection.CELL_3G] = 'Cell 3G connection';
+		states[Connection.CELL_4G] = 'Cell 4G connection';
+		states[Connection.NONE] = 'No network connection';
+
+		console.log('Connection type: ' + states[networkState]);
+	}
+
+	function getScore() {
+		var score = 0;
+
+		console.log('getting score');
+		$.ajax({
+			url : "http://synd.cricbuzz.com/j2me/1.0/livematches.xml",
+			timeout : 5000,
+			success : function(data, status, somethingelse) {
+				console.log('success in ajax');
+				$("match", data).each(function(i) {
+					var matchdetails = $(this).attr("srs");
+					matchstring = matchstring + ' ' + matchdetails;
+					$('#matchlist').append('<div>' + matchdetails + '</div>');
+					console.log('match details: ' + matchdetails);
+				});
+			}
+		});
+	}
+
+	$(function() {
+		alert("hi, jquery is loaded");
+		getScore();
+	});
+</script>
 <body>
-
- <div id="container">
- <header></header>
-		<h2>This is a heading</h2>
-		<p>This is a paragraph.</p>
-		<p>This is another paragraph.</p>
-		<button>Click me</button>
-		
-    <footer>
-
-    </footer>
-  </div>
-
+	<h1>Hello PhoneGap</h1>
+	<div id="matchlist"></div>
 </body>
 </html>
